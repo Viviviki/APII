@@ -12,7 +12,7 @@ app = FastAPI()
 def read_root():
     return {"Hello": "World"}
 
-@app.get("/about_me")
+@app.get("/about")
 def show_about_me(a:int = None, b:int =6):
 
     return {
@@ -22,7 +22,7 @@ def show_about_me(a:int = None, b:int =6):
         's': a+b,
     }
 
-@app.get("/random")
+@app.get("/rnd")
 def show_random():
     return {"number":randint(1,10)}
 
@@ -31,7 +31,7 @@ def show_random():
 # lt <
 # le <=
 
-@app.get("/plochad_treug")
+@app.get("/t_square")
 def calculate_treug(a:int=Query(gt=0), b:int=Query(gt=0), c:int=Query(gt=0)):
 
     return {
