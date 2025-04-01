@@ -81,6 +81,7 @@ def poluch_inf(item_id:int = Path(gt=0)):
             return i
     raise HTTPException(400, "Товар не найден.")
 
+
 @app.post("/items")
 def sozd_tov(item: pyd.Item):
     item = dict(item)
